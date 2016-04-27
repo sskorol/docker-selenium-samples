@@ -20,3 +20,5 @@ mvn site
 Please note that video recording feature is not officially released yet. So to use it, you'll need to build latest [Allure](https://github.com/allure-framework/allure-core) snapshot by your own.
 
 In case if you use [allure-maven-plugin](https://github.com/allure-framework/allure-maven-plugin) for report generation, you may also need to rebuild it with reference to newly created `core` snapshot. Just change [allure.version](https://github.com/allure-framework/allure-maven-plugin/blob/master/src/main/java/ru/yandex/qatools/allure/report/AllureResolveMojo.java) property to corresponding snapshot and call `clean install` goal.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=f73ea4-RVHo" target="_blank"><img src="http://img.youtube.com/vi/f73ea4-RVHo/0.jpg" alt="demo" width="800" height="600" border="10" /></a>
