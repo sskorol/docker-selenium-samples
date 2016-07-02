@@ -8,19 +8,17 @@ Custom capabilities with required video info are set in `WebDriverContainer`.
 Video attachment process is triggered in `BaseTestListener`.
 
 Use the following command to run tests against docker containers:
-
 ```
 mvn clean test
 ```
-
 Note that by default tests are configured to be executed against chrome and firefox in parallel. So you should either raise corresponding configuration first using `docker` or `docker-compose`, or modify `debug-suite.xml`, which controls `browser` and scaling options.
 
 To generate test results report, you need to run:
-
 ```
 mvn site
 ```
-
 Please note that video recording feature is not officially released yet. So to use it, you'll need to build latest [Allure](https://github.com/allure-framework/allure-core) snapshot by your own.
 
 In case if you use [allure-maven-plugin](https://github.com/allure-framework/allure-maven-plugin) for report generation, you may also need to rebuild it with reference to newly created `core` snapshot. Just change [allure.version](https://github.com/allure-framework/allure-maven-plugin/blob/master/src/main/java/ru/yandex/qatools/allure/report/AllureResolveMojo.java) property to corresponding snapshot and call `clean install` goal.
+
+[![demo](http://img.youtube.com/vi/f73ea4-RVHo/0.jpg)](http://www.youtube.com/watch?v=f73ea4-RVHo)
