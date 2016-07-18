@@ -10,7 +10,9 @@ Custom capabilities with required video info / proxy are set in `WebDriverContai
 
 Video / HAR attachment process is triggered in `BaseTestListener`.
 
-Note that this project depends on [browsermob-proxy-rest](https://github.com/sskorol/browsermob-proxy-rest). So first you'll need to deploy it into your local maven repository.
+Note that this project depends on [browsermob-proxy-rest](https://github.com/sskorol/browsermob-proxy-rest). So first you'll need to deploy it into your local maven repository. You may also want to build BMP image from [docker-browsermob-proxy](https://github.com/sskorol/docker-browsermob-proxy).
+
+HAR attachment is implemented as an embedded version of [HAR Viewer](http://www.softwareishard.com/har/viewer). 
 
 Use the following command to run tests against docker containers:
 ```
