@@ -4,10 +4,13 @@ import com.blogspot.notes.automation.qa.entities.WebDriverContainer;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 
 import java.lang.reflect.Method;
 import java.util.Optional;
+
+import static com.blogspot.notes.automation.qa.utils.HARUtils.releaseHARFiles;
 
 /**
  * Author: Serhii Korol.
@@ -26,6 +29,11 @@ public class BaseTest {
 		WEB_DRIVER_THREAD_LOCAL.remove();
 	}
 
+	@AfterSuite
+	public void cleanUpHARFiles() {
+		releaseHARFiles();
+	}
+
 	public static WebDriver getDriver() {
 		return Optional.ofNullable(WEB_DRIVER_THREAD_LOCAL.get())
 				.map(WebDriverContainer::getDriver)
@@ -36,5 +44,11 @@ public class BaseTest {
 		return Optional.ofNullable(WEB_DRIVER_THREAD_LOCAL.get())
 				.map(WebDriverContainer::getVideoRecordingPath)
 				.orElseThrow(() -> new IllegalStateException("Unable to get video recording path"));
+	}
+
+	public static ProxyServer getProxyServer() {
+		return Optional.ofNullable(WEB_DRIVER_THREAD_LOCAL.get())
+				.map(WebDriverContainer::getProxyServer)
+				.orElseThrow(() -> new IllegalStateException("Unable to get ProxyServer instance"));
 	}
 }

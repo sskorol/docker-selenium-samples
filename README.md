@@ -1,24 +1,25 @@
-# Basic selenium test samples with video recording support
+# Basic selenium test samples with video recording / proxy support
 This project provides some common usage examples for [docker-selenium](https://github.com/sskorol/docker-selenium) and [docker-selenium-grid](https://github.com/sskorol/docker-selenium-grid). See technical details in related [article](http://qa-automation-notes.blogspot.com/2016/04/docker-selenium-and-bit-of-allure-how.html).
 
-The main intention is to show how to use video recording feature within docker containers.
+The main intention is to show how to use the following features in docker containers:
 
-Custom capabilities with required video info are set in `WebDriverContainer`.
+ - video recording
+ - network traffic recording
 
-Video attachment process is triggered in `BaseTestListener`.
+Custom capabilities with required video info / proxy are set in `WebDriverContainer`.
+
+Video / HAR attachment process is triggered in `BaseTestListener`.
+
+Note that this project depends on [browsermob-proxy-rest](https://github.com/sskorol/browsermob-proxy-rest). So first you'll need to deploy it into your local maven repository.
 
 Use the following command to run tests against docker containers:
 ```
 mvn clean test
 ```
-Note that by default tests are configured to be executed against chrome and firefox in parallel. So you should either raise corresponding configuration first using `docker` or `docker-compose`, or modify `debug-suite.xml`, which controls `browser` and scaling options.
 
 To generate test results report, you need to run:
 ```
 mvn site
 ```
-Please note that video recording feature is not officially released yet. So to use it, you'll need to build latest [Allure](https://github.com/allure-framework/allure-core) snapshot by your own.
 
-In case if you use [allure-maven-plugin](https://github.com/allure-framework/allure-maven-plugin) for report generation, you may also need to rebuild it with reference to newly created `core` snapshot. Just change [allure.version](https://github.com/allure-framework/allure-maven-plugin/blob/master/src/main/java/ru/yandex/qatools/allure/report/AllureResolveMojo.java) property to corresponding snapshot and call `clean install` goal.
-
-[![demo](http://img.youtube.com/vi/f73ea4-RVHo/0.jpg)](http://www.youtube.com/watch?v=f73ea4-RVHo)
+[![demo](http://img.youtube.com/vi/oxanT-d48N0/0.jpg)](https://youtu.be/oxanT-d48N0)

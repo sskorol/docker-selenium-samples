@@ -1,22 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Debug suite" parallel="tests" thread-count="2">
+<suite name="Debug suite">
     <test name="Chrome tests">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.blogspot.notes.automation.qa.testcases.GoogleTests">
                 <methods>
                     <include name="searchForAutomationInGoogle"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-
-    <test name="Firefox tests">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="com.blogspot.notes.automation.qa.testcases.GoogleTests">
-                <methods>
-                    <include name="searchForQualityInGoogle"/>
                 </methods>
             </class>
         </classes>

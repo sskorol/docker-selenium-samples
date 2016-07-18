@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="css/spinner.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"
+            integrity="sha256-8WqyJLuWKRBVhxXIL1jBDD7SDxU936oZkCnxQbWwJVw=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/har-viewer.js"></script>
+    <script>
+        $(window).load(function() {
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+</head>
+<body>
+<div id="loader" class="se-pre-con"></div>
+<div class="har" data-har="{{link}}" height="{{height}}px"></div>
+</body>
+</html>

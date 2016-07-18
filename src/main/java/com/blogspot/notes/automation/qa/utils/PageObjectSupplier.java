@@ -12,6 +12,10 @@ import static com.blogspot.notes.automation.qa.core.BaseTest.getDriver;
  */
 public final class PageObjectSupplier {
 
+	private PageObjectSupplier() {
+		throw new UnsupportedOperationException("Illegal access to private constructor");
+	}
+
 	public static <T> T $(Class<T> pageObject) {
 		return ConstructorAccess.get(pageObject).newInstance();
 	}
@@ -21,9 +25,5 @@ public final class PageObjectSupplier {
 		Try.run(() -> getDriver().navigate().to(url))
 				.getOrElseThrow(ex -> new IllegalArgumentException("Unable to navigate to specified URL", ex));
 		return $(SearchPage.class);
-	}
-
-	private PageObjectSupplier() {
-		throw new UnsupportedOperationException("Illegal access to private constructor");
 	}
 }

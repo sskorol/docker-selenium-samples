@@ -17,7 +17,7 @@ import static com.blogspot.notes.automation.qa.core.BaseTest.getDriver;
  */
 public class BasePage {
 
-	private WebDriver driver;
+	private final WebDriver driver;
 	private WebDriverWait wait;
 
 	public BasePage() {
